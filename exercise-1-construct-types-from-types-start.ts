@@ -3,11 +3,11 @@
  */
 
 interface Country {
-    name: string;
-    code: string;
-    languages: string[];
-    currency?: string;
-    population: number;
+  name: string;
+  code: string;
+  languages: string[];
+  currency?: string;
+  population: number;
 }
 
 // Change the `PartialCountry` type to use the `Partial` utility type.
@@ -16,8 +16,8 @@ interface Country {
 type PartialCountry = Partial<Country>;
 
 const countryA: PartialCountry = {
-    code: "CN",
-    population: 1_412_600_000,
+  code: "CN",
+  population: 1_412_600_000,
 };
 
 // Change the `CompleteCountry` type to use the `Required` utility type.
@@ -27,11 +27,11 @@ const countryA: PartialCountry = {
 type CompleteCountry = Required<Country>;
 
 const countryB: CompleteCountry = {
-    name: "Greece",
-    code: "GR",
-    languages: ["Greek"],
-    currency: "EURO";
-    population: 10_678_632,
+  name: "Greece",
+  code: "GR",
+  languages: ["Greek"],
+  currency: "EURO",
+  population: 10_678_632,
 };
 
 // Change the `ReadonlyCountry` type to use the `Readonly` utility type.
@@ -41,10 +41,10 @@ const countryB: CompleteCountry = {
 type ReadonlyCountry = Readonly<Country>;
 
 const countryC: ReadonlyCountry = {
-    name: "Italy",
-    code: "IT",
-    languages: ["Italian"],
-    population: 60_317_116,
+  name: "Italy",
+  code: "IT",
+  languages: ["Italian"],
+  population: 60_317_116,
 };
 
 // countryC.population = 60_317_117;
@@ -58,21 +58,21 @@ console.log(countryC);
 type CountryWithPopulation = Pick<Country, "name" | "code" | "population">;
 
 const countryD: CountryWithPopulation = {
-    name: "New Zealand",
-    code: "NZ",
-    population: 5_135_300,
+  name: "New Zealand",
+  code: "NZ",
+  population: 5_135_300,
 };
 
 // Change the `CountryWithoutPopulation` type to use the `Omit` utility type.
 // This should fix the type error for the `countryE` object.
 
-type CountryWithoutPopulation = Omit<Country, "population">;;
+type CountryWithoutPopulation = Omit<Country, "population">;
 
 const countryE: CountryWithoutPopulation = {
-    name: "Thailand",
-    code: "TH",
-    languages: ["Thai", "Isan", "Kam Mueang", "Pak Tai", "Malay"],
-    currency: "Baht",
+  name: "Thailand",
+  code: "TH",
+  languages: ["Thai", "Isan", "Kam Mueang", "Pak Tai", "Malay"],
+  currency: "Baht",
 };
 
 // ----
